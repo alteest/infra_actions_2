@@ -21,6 +21,7 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
+        export SECRET_KEY=${{ secrets.SECRET_KEY }}
         python -m flake8
         cd infra_project/
         python manage.py test
